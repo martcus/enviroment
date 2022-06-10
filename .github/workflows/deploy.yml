@@ -2,7 +2,7 @@ name: Deploy
 
 on:
   workflow_dispatch:
-    inputs.
+    inputs:
       ENVIROMENT:
         description: "environment: the target environment where to execute the validatation or deployment"
         required: true
