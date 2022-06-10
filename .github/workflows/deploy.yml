@@ -9,18 +9,18 @@ on:
         required: true
 
 jobs:
-  deploy:
+  build:
     environment:
       name: ${{ github.event.inputs.ENVIROMENT }}
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
-
-      - name: Run a one-line script
+      - name: build
         run: echo Hello, world!
 
-      - name: Run a multi-line script
-        run: |
-          echo ${{ secrets.MY_SECRET }} >> secrets.txt
-          cat secrets.txt
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [build]
+    steps:
+      - name: deploy
+        run: echo Hello, world!
