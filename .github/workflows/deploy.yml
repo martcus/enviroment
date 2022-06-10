@@ -5,6 +5,7 @@ on:
     inputs:
       ENVIROMENT:
         description: "environment: the target environment where to execute the validatation or deployment"
+        type: environment
         required: true
 
 jobs:
